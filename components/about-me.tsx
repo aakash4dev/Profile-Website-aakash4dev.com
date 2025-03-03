@@ -7,44 +7,74 @@ import { Calendar, MapPin, Building2 } from "lucide-react"
 const timelineData = [
   {
     id: 1,
-    company: "Company A",
-    role: "Software Engineer",
-    period: "2020 - 2022",
-    location: "New York, NY",
+    company: "Airchains",
+    role: "Sr Blockchain Developer",
+    period: "Apr 2022 - Present",
+    location: "Gurugram, Haryana, India",
     type: "Full-time",
-    logo: "/company-a-logo.svg",
-    skills: ["JavaScript", "React", "Node.js"],
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DEsMNlYMWuOymRm7e6c0t8qNlnGmld.png",
+    skills: ["Golang", "Rust", "FHE", "ZK", "Blockchain Infrastructure"],
+    description:
+      "Specializing in Golang, Rust, and core blockchain development, focusing on Fully Homomorphic Encryption (FHE), Zero-Knowledge Proofs (ZK), and deep blockchain infrastructure. Building secure, scalable blockchain solutions, optimizing consensus mechanisms, and advancing cryptographic innovations in decentralized systems.",
   },
   {
     id: 2,
-    company: "Company B",
-    role: "Frontend Developer",
-    period: "2022 - Present",
-    location: "San Francisco, CA",
+    company: "Retcons Technology",
+    role: "Blockchain Developer",
+    period: "Nov 2021 - Mar 2022",
+    location: "Raipur, Chhattisgarh, India",
     type: "Full-time",
-    logo: "/company-b-logo.svg",
-    skills: ["React", "Next.js", "Tailwind CSS"],
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HOhx6dzS7fVPgGWywMnlx9mykVF4PN.png",
+    skills: ["Solidity", "JavaScript", "Web3"],
+    description:
+      "Started my journey into Web3, Solidity, and blockchain. Explored cryptocurrencies, their underlying algorithms, and investment strategies. Became a bit more extroverted along the way. Had an amazing experience and great moments with friends.",
+  },
+  {
+    id: 3,
+    company: "QuadKubes Technology",
+    role: "Full Stack Web Developer",
+    period: "Mar 2021 - Aug 2021",
+    location: "India",
+    type: "Internship",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-3GneHILnpMqR0ejz6nnszQtrTCrIyY.png",
+    skills: ["Full Stack Development"],
+    description:
+      "Internship as a Full Stack Web Developer, gaining hands-on experience in web technologies and development practices.",
+  },
+  {
+    id: 4,
+    company: "Rungta College of Engineering & Technology",
+    role: "Bachelor of Engineering - BE",
+    period: "May 2018 - Jun 2022",
+    location: "Bhilai, India",
+    type: "Education",
+    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TujRuHbIqQ3EmgqT3E699wMHMeo683.png",
+    skills: ["Computer Science", "Engineering"],
+    description:
+      "Bachelor's degree in Computer Science and Engineering. Grade: 75.5%. Activities: Chess, Dance, Hackathons 👨‍💻",
   },
 ]
 
 const skillsData = {
-  "Programming Languages": [
-    { name: "JavaScript", proficiency: 90 },
-    { name: "TypeScript", proficiency: 80 },
-    { name: "Solidity", proficiency: 70 },
-    { name: "Go", proficiency: 60 },
-    { name: "Rust", proficiency: 50 },
+  Blockchain: [
+    { name: "Go", proficiency: 90 },
+    { name: "Rust", proficiency: 85 },
+    { name: "Solidity", proficiency: 80 },
+    { name: "Cosmos SDK", proficiency: 75 },
+    { name: "Ignite CLI", proficiency: 70 },
   ],
-  "Frameworks/Libraries": [
-    { name: "React", proficiency: 95 },
-    { name: "Next.js", proficiency: 85 },
-    { name: "Node.js", proficiency: 75 },
-    { name: "Express.js", proficiency: 65 },
+  "Full Stack": [
+    { name: "NextJS", proficiency: 90 },
+    { name: "Tailwind CSS", proficiency: 85 },
+    { name: "NodeJS", proficiency: 80 },
+    { name: "HTML/CSS/JS", proficiency: 95 },
   ],
-  Tools: [
-    { name: "Git", proficiency: 98 },
-    { name: "Docker", proficiency: 88 },
-    { name: "Kubernetes", proficiency: 78 },
+  "Cloud & Tools": [
+    { name: "GCP", proficiency: 80 },
+    { name: "AWS", proficiency: 75 },
+    { name: "Git", proficiency: 90 },
+    { name: "Docker", proficiency: 85 },
+    { name: "ChatGPT", proficiency: 95 },
   ],
 }
 
@@ -72,7 +102,7 @@ export default function AboutMe() {
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-69dycok1tWUrjh0VA4bIB19grsFa5b.jpeg"
                   alt="Aakash Singh Rajput"
                   fill
-                  className="rounded-lg object-cover shadow-lg"
+                  className="rounded-full object-cover shadow-lg"
                 />
               </div>
             </div>
@@ -80,23 +110,23 @@ export default function AboutMe() {
               <div className="prose prose-invert max-w-none text-center md:text-left">
                 {/* Mobile description */}
                 <p className="text-lg leading-relaxed md:hidden">
-                  Blockchain Sorcerer 🧙‍♂️ and Full Stack Dev 💻. Building secure, scalable solutions in the
-                  crypto-verse. From DeFi to Web3, turning complex tech into seamless experiences. ⛓⚡🔥
+                  I am a Blockchain Sorcerer 🧙‍♂️ and Full Stack Dev 💻. I build secure, scalable solutions in the
+                  crypto-verse. From DeFi to Web3, I turn complex tech into seamless experiences. ⛓⚡🔥
                 </p>
                 {/* Desktop description */}
                 <div className="hidden md:block">
                   <p className="text-xl mb-4">
-                    🚀 <strong>Hey, I'm Aakash Singh Rajput!</strong>
+                    🚀 <strong>Hey, I am Aakash Singh Rajput!</strong>
                   </p>
                   <p className="mb-4">
-                    A <strong>Blockchain Wizard 🧙‍♂️</strong> and <strong>Full Stack Alchemist 💻</strong>, turning{" "}
+                    I am a <strong>Blockchain Wizard 🧙‍♂️</strong> and <strong>Full Stack Alchemist 💻</strong>, turning{" "}
                     <strong>lines of code</strong> into <strong>decentralized magic</strong>! Whether it's{" "}
                     <strong>smart contracts</strong>, <strong>ZK proofs</strong>, or <strong>FHE sorcery</strong>, I
                     love pushing Web3 to the next level.
                   </p>
                   <p className="mb-4">
-                    I spend my days <strong>hacking away in Solidity, Go, and Rust</strong>—and my nights wondering why
-                    gas fees still exist. 😅 When I'm not coding, I'm probably deep-diving into{" "}
+                    I spend my days <strong>hacking away in Golang, Rust, and Solidity</strong>—and my nights wondering
+                    why gas fees still exist. 😅 When I am not coding, I am probably deep-diving into{" "}
                     <strong>DeFi rabbit holes</strong>, contributing to <strong>open-source chaos</strong>, or
                     evangelizing blockchain to anyone who'll listen (or can't escape).
                   </p>
@@ -139,9 +169,9 @@ export default function AboutMe() {
                           <Image
                             src={item.logo || "/placeholder.svg"}
                             alt={item.company}
-                            width={56}
-                            height={56}
-                            className="rounded-full"
+                            width={48}
+                            height={48}
+                            className="object-contain p-1"
                           />
                         </div>
                         <div className="text-center md:text-left">
@@ -161,6 +191,7 @@ export default function AboutMe() {
                           </div>
                         </div>
                       </div>
+                      <p className="text-gray-300 mt-4 text-center md:text-left">{item.description}</p>
                       {item.skills.length > 0 && (
                         <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
                           {item.skills.map((skill, skillIndex) => (

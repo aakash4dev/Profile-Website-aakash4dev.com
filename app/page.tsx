@@ -66,7 +66,7 @@ export default function Home() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-              Hey! It's Aakash Singh Rajput
+              Hey! I am Aakash Singh Rajput
             </h1>
             <h2 className="text-xl md:text-2xl mb-8 text-gray-300">
               🚀 Blockchain Innovator | Full-Stack Developer | Tech Explorer
