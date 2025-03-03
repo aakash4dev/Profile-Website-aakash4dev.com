@@ -167,13 +167,14 @@ export default function AboutMe() {
                       <div className="flex flex-col md:flex-row items-center gap-4">
                         <div className="w-16 h-16 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden mb-4 md:mb-0 mx-auto md:mx-0">
                           <Image
-                            src={item.logo || "/placeholder.svg"}
-                            alt={item.company}
-                            width={48}
-                            height={48}
-                            className="object-contain p-1"
+                              src={item.logo || "/placeholder.svg"}
+                              alt={item.company}
+                              width={48}
+                              height={48}
+                              className="w-full h-full object-cover"
                           />
                         </div>
+
                         <div className="text-center md:text-left">
                           <h3 className="text-xl font-bold text-white">{item.role}</h3>
                           <h4 className="text-lg text-purple-400">{item.company}</h4>
