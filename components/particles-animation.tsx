@@ -1,10 +1,9 @@
 "use client"
 
-import { useRef, useMemo, useState, useEffect } from "react"
+import { useRef, useMemo, useState } from "react"
 import { useFrame, useThree } from "@react-three/fiber"
 import { PointMaterial } from "@react-three/drei"
-import type * as THREE from "three"
-import { useThree as useThreeHook } from "@/hooks/useThree"
+import * as THREE from "three"
 
 // Generate random points in a 3D space with a spherical tendency
 function generatePoints(count: number, radius: number) {
@@ -25,26 +24,36 @@ function generatePoints(count: number, radius: number) {
 }
 
 function ParticlesInstance({ count = 2000, size = 0.05, radius = 5 }) {
-  const threeLib = useThreeHook()
   const pointsRef = useRef<THREE.Points>(null)
   const [hovered, setHovered] = useState(false)
-  const { mouse, viewport } = useThree()
+  const { mouse, viewport, size: canvasSize } = useThree()
+
+  // Adjust particle count based on screen size
+  const adjustedCount = useMemo(() => {
+    const baseCount = count
+    if (canvasSize.width < 768) return Math.floor(baseCount * 0.5)
+    return baseCount
+  }, [count, canvasSize.width])
+
+  // Adjust particle size based on screen size
+  const adjustedSize = useMemo(() => {
+    if (canvasSize.width < 768) return size * 0.8
+    return size
+  }, [size, canvasSize.width])
 
   // Generate points only once
-  const points = useMemo(() => generatePoints(count, radius), [count, radius])
+  const points = useMemo(() => generatePoints(adjustedCount, radius), [adjustedCount, radius])
 
   // Create a buffer geometry with the points
   const bufferGeometry = useMemo(() => {
-    if (!threeLib) return null
-
-    const geometry = new threeLib.BufferGeometry()
-    geometry.setAttribute("position", new threeLib.BufferAttribute(points, 3))
+    const geometry = new THREE.BufferGeometry()
+    geometry.setAttribute("position", new THREE.BufferAttribute(points, 3))
     return geometry
-  }, [points, threeLib])
+  }, [points])
 
   // Animation frame
   useFrame((state) => {
-    if (!pointsRef.current || !threeLib) return
+    if (!pointsRef.current) return
 
     const time = state.clock.getElapsedTime()
 
@@ -55,7 +64,7 @@ function ParticlesInstance({ count = 2000, size = 0.05, radius = 5 }) {
     const positions = pointsRef.current.geometry.attributes.position
 
     // Animate each point
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < adjustedCount; i++) {
       const i3 = i * 3
 
       // Get the original position
@@ -92,30 +101,15 @@ function ParticlesInstance({ count = 2000, size = 0.05, radius = 5 }) {
     positions.needsUpdate = true
   })
 
-  if (!bufferGeometry || !threeLib) return null
-
   return (
     <points ref={pointsRef} onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)}>
       <primitive object={bufferGeometry} attach="geometry" />
-      <PointMaterial transparent color="#8b5cf6" size={size} sizeAttenuation={true} depthWrite={false} />
+      <PointMaterial transparent color="#8b5cf6" size={adjustedSize} sizeAttenuation={true} depthWrite={false} />
     </points>
   )
 }
 
 export default function ParticlesAnimation() {
-  const [isThreeLoaded, setIsThreeLoaded] = useState(false)
-  const threeLib = useThreeHook()
-
-  useEffect(() => {
-    if (threeLib) {
-      setIsThreeLoaded(true)
-    }
-  }, [threeLib])
-
-  if (!isThreeLoaded) {
-    return null // or return a loading indicator
-  }
-
   return <ParticlesInstance />
 }
 

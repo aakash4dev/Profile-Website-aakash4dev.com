@@ -55,32 +55,10 @@ const timelineData = [
   },
 ]
 
-const skillsData = {
-  Blockchain: [
-    { name: "Go", proficiency: 90 },
-    { name: "Rust", proficiency: 85 },
-    { name: "Solidity", proficiency: 80 },
-    { name: "Cosmos SDK", proficiency: 75 },
-    { name: "Ignite CLI", proficiency: 70 },
-  ],
-  "Full Stack": [
-    { name: "NextJS", proficiency: 90 },
-    { name: "Tailwind CSS", proficiency: 85 },
-    { name: "NodeJS", proficiency: 80 },
-    { name: "HTML/CSS/JS", proficiency: 95 },
-  ],
-  "Cloud & Tools": [
-    { name: "GCP", proficiency: 80 },
-    { name: "AWS", proficiency: 75 },
-    { name: "Git", proficiency: 90 },
-    { name: "Docker", proficiency: 85 },
-    { name: "ChatGPT", proficiency: 95 },
-  ],
-}
 
 export default function AboutMe() {
   return (
-    <section id="about" className="py-12 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-12 bg-gradient-to-b from-black to-gray-900">
       <div className="container px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -88,59 +66,8 @@ export default function AboutMe() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-              Code, Coffee & Me
-            </span>
-            <span className="ml-2">☕💻</span>
-          </h2>
-          {/* Profile Section */}
-          <div className="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
-            <div className="md:w-1/3">
-              <div className="relative w-64 h-64 mx-auto">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-69dycok1tWUrjh0VA4bIB19grsFa5b.jpeg"
-                  alt="Aakash Singh Rajput"
-                  fill
-                  className="rounded-full object-cover shadow-lg"
-                />
-              </div>
-            </div>
-            <div className="md:w-2/3">
-              <div className="prose prose-invert max-w-none text-center md:text-left">
-                {/* Mobile description */}
-                <p className="text-lg leading-relaxed md:hidden">
-                  I am a Blockchain Sorcerer 🧙‍♂️ and Full Stack Dev 💻. I build secure, scalable solutions in the
-                  crypto-verse. From DeFi to Web3, I turn complex tech into seamless experiences. ⛓⚡🔥
-                </p>
-                {/* Desktop description */}
-                <div className="hidden md:block">
-                  <p className="text-xl mb-4">
-                    🚀 <strong>Hey, I am Aakash Singh Rajput!</strong>
-                  </p>
-                  <p className="mb-4">
-                    I am a <strong>Blockchain Wizard 🧙‍♂️</strong> and <strong>Full Stack Alchemist 💻</strong>, turning{" "}
-                    <strong>lines of code</strong> into <strong>decentralized magic</strong>! Whether it's{" "}
-                    <strong>smart contracts</strong>, <strong>ZK proofs</strong>, or <strong>FHE sorcery</strong>, I
-                    love pushing Web3 to the next level.
-                  </p>
-                  <p className="mb-4">
-                    I spend my days <strong>hacking away in Golang, Rust, and Solidity</strong>—and my nights wondering
-                    why gas fees still exist. 😅 When I am not coding, I am probably deep-diving into{" "}
-                    <strong>DeFi rabbit holes</strong>, contributing to <strong>open-source chaos</strong>, or
-                    evangelizing blockchain to anyone who'll listen (or can't escape).
-                  </p>
-                  <p>
-                    Let's <strong>connect, build, and break things</strong>—because the{" "}
-                    <strong>future is decentralized, and I refuse to be left behind!</strong> ⛓⚡🔥
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Timeline Section */}
-          <div className="mb-20">
+          <div id="experience" className="mb-20">
             <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
                 The Road So Far
@@ -167,14 +94,13 @@ export default function AboutMe() {
                       <div className="flex flex-col md:flex-row items-center gap-4">
                         <div className="w-16 h-16 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden mb-4 md:mb-0 mx-auto md:mx-0">
                           <Image
-                              src={item.logo || "/placeholder.svg"}
-                              alt={item.company}
-                              width={48}
-                              height={48}
-                              className="w-full h-full object-cover"
+                            src={item.logo || "/placeholder.svg"}
+                            alt={item.company}
+                            width={48}
+                            height={48}
+                            className="object-contain p-1"
                           />
                         </div>
-
                         <div className="text-center md:text-left">
                           <h3 className="text-xl font-bold text-white">{item.role}</h3>
                           <h4 className="text-lg text-purple-400">{item.company}</h4>
@@ -225,48 +151,8 @@ export default function AboutMe() {
               </div>
             </div>
           </div>
-
-          {/* Skills Section */}
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-                Code Arsenal
-              </span>
-              <span className="ml-2 text-white">⚔️</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {Object.entries(skillsData).map(([category, skills]) => (
-                <div key={category} className="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm border border-gray-800">
-                  <h4 className="text-xl font-bold mb-4 text-purple-400 text-center md:text-left">{category}</h4>
-                  {skills.map((skill) => (
-                    <SkillBar key={skill.name} name={skill.name} proficiency={skill.proficiency} />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
   )
 }
-
-function SkillBar({ name, proficiency }) {
-  return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <span className="text-gray-300">{name}</span>
-        <span className="text-gray-400">{proficiency}%</span>
-      </div>
-      <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${proficiency}%` }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
-        />
-      </div>
-    </div>
-  )
-}
-

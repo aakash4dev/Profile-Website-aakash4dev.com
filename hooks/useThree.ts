@@ -7,9 +7,24 @@ export function useThree() {
   const [three, setThree] = useState<typeof THREE | null>(null)
 
   useEffect(() => {
-    import("three").then((THREE) => {
-      setThree(THREE)
-    })
+    let isMounted = true
+
+    const loadThree = async () => {
+      try {
+        const THREE = await import("three")
+        if (isMounted) {
+          setThree(THREE)
+        }
+      } catch (error) {
+        console.error("Failed to load Three.js:", error)
+      }
+    }
+
+    loadThree()
+
+    return () => {
+      isMounted = false
+    }
   }, [])
 
   return three
