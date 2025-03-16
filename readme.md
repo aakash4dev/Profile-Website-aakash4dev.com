@@ -30,7 +30,7 @@ This website is built using the following languages and frameworks:
 To run this website locally, use the following commands:
 
 ```bash
-npm i --force or --legacy-peer-deps
+npm i --force --legacy-peer-deps
 npm run dev
 ```
 

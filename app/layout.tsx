@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Aakash Singh Rajput - Blockchain Developer & Web3 Engineer",
@@ -88,7 +89,11 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon/favicon.ico" />
         <title>Portfolio Website: Aakash Singh Rajput</title>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics/>
+      </body>
+
     </html>
   )
 }
