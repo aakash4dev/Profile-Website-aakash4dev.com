@@ -92,7 +92,7 @@ export default function RootLayout({
         <meta name="author" content="Aakash" />
         <meta property="og:title" content="Aakash - Blockchain Developer" />
         <meta property="og:description" content="I build AI & Web3 applications." />
-        <meta property="og:image" content="https://aakash4dev.com/profile.jpg" />
+        <meta property="og:image" content="https://aakash4dev.com/Profile.jpeg" />
         <meta property="og:url" content="https://aakash4dev.com" />
         <meta property="twitter:card" content="summary_large_image" />
 
