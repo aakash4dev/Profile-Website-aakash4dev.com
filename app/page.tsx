@@ -17,6 +17,7 @@ import {
   Smartphone,
   PenTool,
   ArrowRight,
+  X,
 } from "lucide-react"
 import { Link as ScrollLink } from "react-scroll"
 import CustomCursor from "@/components/custom-cursor"
@@ -224,6 +225,10 @@ export default function Home() {
                 tags={["Go", "React", "GraphQL", "Web3"]}
                 imageComponent={<BlockchainExplorerImage />}
                 link="https://github.com/aakash4dev/blockchain-explorer"
+                githubLink="https://github.com/aakash4dev/blockchain-explorer"
+                longDescription="A comprehensive blockchain explorer for tracking transactions, blocks, and smart contracts with real-time data visualization."
+                technologies={["Go", "React", "GraphQL", "Web3"]}
+                features={["Real-time data visualization", "Transaction tracking", "Blockchain analysis"]}
               />
               <EnhancedProjectCard
                 title="Decentralized Blog Platform"
@@ -231,6 +236,10 @@ export default function Home() {
                 tags={["Next.js", "Arweave", "Solidity", "IPFS"]}
                 imageComponent={<BlogPlatformImage />}
                 link="https://github.com/aakash4dev/decentralized-blog"
+                githubLink="https://github.com/aakash4dev/decentralized-blog"
+                longDescription="A blockchain-powered blogging platform with permanent storage on Arweave and crypto micropayments for content creators."
+                technologies={["Next.js", "Arweave", "Solidity", "IPFS"]}
+                features={["Permanent storage", "Crypto micropayments", "Decentralized"]}
               />
               <EnhancedProjectCard
                 title="Solidity Code Generator"
@@ -238,6 +247,10 @@ export default function Home() {
                 tags={["Solidity", "TypeScript", "OpenAI", "Hardhat"]}
                 imageComponent={<SolidityGeneratorImage />}
                 link="https://github.com/aakash4dev/solidity-generator"
+                githubLink="https://github.com/aakash4dev/solidity-generator"
+                longDescription="An AI-powered tool for rapid development and testing of secure smart contracts with built-in security analysis."
+                technologies={["Solidity", "TypeScript", "OpenAI", "Hardhat"]}
+                features={["Rapid development", "Security analysis", "AI-powered"]}
               />
               <EnhancedProjectCard
                 title="Cross-Chain Bridge"
@@ -245,6 +258,10 @@ export default function Home() {
                 tags={["Rust", "Solidity", "Cosmos SDK", "DeFi"]}
                 imageComponent={<CrossChainBridgeImage />}
                 link="https://github.com/aakash4dev/cross-chain-bridge"
+                githubLink="https://github.com/aakash4dev/cross-chain-bridge"
+                longDescription="A secure bridge for asset transfers between different blockchain networks with multi-signature validation."
+                technologies={["Rust", "Solidity", "Cosmos SDK", "DeFi"]}
+                features={["Multi-signature validation", "Secure asset transfers", "Cross-chain"]}
               />
               <EnhancedProjectCard
                 title="ZK Voting System"
@@ -252,6 +269,10 @@ export default function Home() {
                 tags={["ZK Proofs", "Rust", "Circom", "Ethereum"]}
                 imageComponent={<ZkVotingImage />}
                 link="https://github.com/aakash4dev/zk-voting"
+                githubLink="https://github.com/aakash4dev/zk-voting"
+                longDescription="A privacy-preserving voting system using zero-knowledge proofs to ensure vote secrecy while maintaining verifiability."
+                technologies={["ZK Proofs", "Rust", "Circom", "Ethereum"]}
+                features={["Privacy-preserving", "Vote secrecy", "Verifiability"]}
               />
               <EnhancedProjectCard
                 title="FHE Data Marketplace"
@@ -259,6 +280,10 @@ export default function Home() {
                 tags={["FHE", "Go", "React", "Privacy"]}
                 imageComponent={<FheMarketplaceImage />}
                 link="https://github.com/aakash4dev/fhe-marketplace"
+                githubLink="https://github.com/aakash4dev/fhe-marketplace"
+                longDescription="A secure data marketplace using Fully Homomorphic Encryption allowing computation on encrypted data without revealing the underlying information."
+                technologies={["FHE", "Go", "React", "Privacy"]}
+                features={["Secure data marketplace", "FHE computation", "Privacy-preserving"]}
               />
             </div>
           </motion.div>
@@ -446,37 +471,147 @@ function ServiceCard({ icon, title, description }) {
   )
 }
 
-function EnhancedProjectCard({ title, description, tags, imageComponent, link }) {
+function EnhancedProjectCard({ title, description, tags, imageComponent, link, githubLink, longDescription, technologies, features }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <motion.div
-      className="rounded-lg bg-gray-900 border border-gray-800 hover:border-purple-500 transition-all duration-300 overflow-hidden h-full flex flex-col"
-      whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(139, 92, 246, 0.3)" }}
-    >
-      <div className="h-48 overflow-hidden">{imageComponent}</div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
-        <p className="text-gray-400 mb-4 flex-grow">{description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300"
+    <>
+      <motion.div
+        className="rounded-lg bg-gray-900 border border-gray-800 hover:border-purple-500 transition-all duration-300 overflow-hidden h-full flex flex-col"
+        whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(139, 92, 246, 0.3)" }}
+      >
+        <div className="h-48 overflow-hidden">{imageComponent}</div>
+        <div className="p-6 flex flex-col flex-grow">
+          <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
+          <p className="text-gray-400 mb-4 flex-grow">{description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-4 mt-auto">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="flex-1 text-purple-400 hover:text-purple-300 flex items-center justify-center py-2 px-4 rounded-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors"
             >
-              {tag}
-            </span>
-          ))}
+              <span>View Details</span>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </button>
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-purple-400 hover:text-purple-300 flex items-center justify-center py-2 px-4 rounded-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors"
+            >
+              <Github className="h-4 w-4 mr-2" />
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-purple-400 hover:text-purple-300 flex items-center justify-center mt-2"
+      </motion.div>
+
+      {/* Project Details Modal */}
+      {isModalOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setIsModalOpen(false)}
         >
-          <span>View Project</span>
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </a>
-      </div>
-    </motion.div>
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-gray-900 rounded-xl border border-gray-800 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="relative">
+              <div className="h-64 overflow-hidden rounded-t-xl">
+                {imageComponent}
+              </div>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-white mb-4">{title}</h2>
+              
+              <div className="flex flex-wrap gap-2 mb-6">
+                {tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Overview</h3>
+                  <p className="text-gray-300">{longDescription}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Technologies Used</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 rounded-full bg-gray-800 text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Key Features</h3>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                    {features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="flex gap-4 mt-8">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 text-purple-400 hover:text-purple-300 flex items-center justify-center py-2 px-4 rounded-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors"
+                >
+                  <span>View Live Project</span>
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+                <a
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 text-purple-400 hover:text-purple-300 flex items-center justify-center py-2 px-4 rounded-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors"
+                >
+                  <Github className="h-4 w-4 mr-2" />
+                  <span>View on GitHub</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </>
   )
 }
 
