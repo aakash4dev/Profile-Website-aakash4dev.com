@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://aakash4dev.com
+
+# Sitemaps
+Sitemap: https://aakash4dev.com/sitemap.xml

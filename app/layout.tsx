@@ -85,9 +85,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Aakash - Blockchain Developer</title>
+        <meta name="description" content="Aakash - Blockchain & AI Developer | Senior Blockchain Dev at Airchains" />
+        <meta name="keywords" content="Next.js, Blockchain, AI, Developer, Web3, Smart Contracts" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Aakash" />
+        <meta property="og:title" content="Aakash - Blockchain Developer" />
+        <meta property="og:description" content="I build AI & Web3 applications." />
+        <meta property="og:image" content="https://aakash4dev.com/profile.jpg" />
+        <meta property="og:url" content="https://aakash4dev.com" />
+        <meta property="twitter:card" content="summary_large_image" />
+
         <link rel="icon" href="/favicon/favicon.ico" sizes="any" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/favicon/favicon.ico" />
-        <title>Portfolio Website: Aakash Singh Rajput</title>
       </head>
       <body>
         {children}

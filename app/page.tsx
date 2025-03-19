@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="relative w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-pink-500 p-1">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 mix-blend-overlay rounded-full" />
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-09%20at%201.43.47%20AM-vg0n1lLfN82dsB5yON28zhRtpRJA4K.jpeg"
+                    src="/Profile.jpeg"
                     alt="Aakash Singh Rajput"
                     className="w-full h-full object-cover rounded-full"
                   />
