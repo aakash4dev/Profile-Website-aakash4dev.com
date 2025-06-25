@@ -38,6 +38,7 @@ import {
 } from "@/components/project-images"
 import TypingText from "@/components/typing-text"
 import Skills from "@/components/skills"
+import Link from "next/link"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -128,39 +129,51 @@ export default function Home() {
                 a focus on FHE, ZK proofs, and deep blockchain infrastructure.
               </p>
 
-              {/* Social Icons */}
+              {/* Social Icons
               <div className="flex gap-6 mb-8 justify-center lg:justify-start">
-                <motion.a
-                  href="https://linkedin.com/in/aakash4dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  className="w-12 h-12"
                 >
-                  <Linkedin className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  href="https://github.com/aakash4dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                  <a
+                    href="https://linkedin.com/in/aakash4dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </motion.div>
+                <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  className="w-12 h-12"
                 >
-                  <Github className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  href="https://twitter.com/aakash4dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                  <Link
+                    href="https://github.com/aakash4dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                  >
+                    <Github className="w-5 h-5" />
+                  </Link>
+                </motion.div>
+                <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  className="w-12 h-12"
                 >
-                  <Twitter className="w-5 h-5" />
-                </motion.a>
-              </div>
+                  <Link
+                    href="https://twitter.com/aakash4dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                  >
+                    <Twitter className="w-5 h-5" />
+                  </Link>
+                </motion.div>
+              </div> */}
 
               {/* CTA Buttons */}
               <motion.div
@@ -176,7 +189,7 @@ export default function Home() {
                   </button>
                 </ScrollLink>
                 <a
-                  href="https://calendly.com/aakash4dev/quickchat"
+                  href="https://calendly.com/aakash4dev/let-s-connect"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-3 rounded-full border-2 border-purple-500 text-white font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-purple-500/20 flex items-center justify-center"
@@ -221,28 +234,45 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <EnhancedProjectCard
                 title="Blockchain Explorer"
-                description="A comprehensive blockchain explorer for tracking transactions, blocks, and smart contracts with real-time data visualization."
-                tags={["Go", "React", "GraphQL", "Web3"]}
+                description="A basic blockchain explorer for tracking transactions, blocks with real-time data visualization."
+                tags={["NextJS", "MongoDB", "Wen3JS", "Blockchain"]}
                 imageComponent={<BlockchainExplorerImage />}
-                link="https://github.com/aakash4dev/blockchain-explorer"
-                githubLink="https://github.com/aakash4dev/blockchain-explorer"
-                longDescription="A comprehensive blockchain explorer for tracking transactions, blocks, and smart contracts with real-time data visualization."
-                technologies={["Go", "React", "GraphQL", "Web3"]}
+                link="https://github.com/aakash4dev/nextjs-ethereum-explorer"
+                githubLink="https://github.com/aakash4dev/nextjs-ethereum-explorer"
+                longDescription="A basic blockchain explorer for tracking transactions, blocks with real-time data visualization."
+                technologies={["NextJS", "MongoDB", "Wen3JS", "Blockchain"]}
                 features={["Real-time data visualization", "Transaction tracking", "Blockchain analysis"]}
               />
               <EnhancedProjectCard
-                title="Decentralized Blog Platform"
-                description="A blockchain-powered blogging platform with permanent storage on Arweave and crypto micropayments for content creators."
-                tags={["Next.js", "Arweave", "Solidity", "IPFS"]}
+                title="Blogging Blockchain Platform"
+                description="Developed an application-specific blockchain using the Cosmos SDK and Ignite CLI, creating a decentralized platform exclusively for blogging functionalities."
+                tags={["Cosmos SDK", "Ignite CLI", "Golang"]}
                 imageComponent={<BlogPlatformImage />}
-                link="https://github.com/aakash4dev/decentralized-blog"
-                githubLink="https://github.com/aakash4dev/decentralized-blog"
-                longDescription="A blockchain-powered blogging platform with permanent storage on Arweave and crypto micropayments for content creators."
-                technologies={["Next.js", "Arweave", "Solidity", "IPFS"]}
-                features={["Permanent storage", "Crypto micropayments", "Decentralized"]}
+                link="https://github.com/aakash4dev/blogging_blockchain"
+                githubLink="https://github.com/aakash4dev/blogging_blockchain"
+                longDescription="Developed an application-specific blockchain using the Cosmos SDK and Ignite CLI, creating a decentralized platform exclusively for blogging functionalities."
+                technologies={["Cosmos SDK", "Ignite CLI", "Golang"]}
+                features={["Application-specific blockchain", "Decentralized blogging", "Cosmos SDK based"]}
               />
               <EnhancedProjectCard
-                title="Solidity Code Generator"
+                title="Credit Card Fraud Detector"
+                description="Developed an AI-powered fraud detection system that combines machine learning, blockchain security, and facial recognition to prevent fraudulent transactions."
+                tags={["Python", "Solidity", "Hardhat", "Golang"]}
+                imageComponent={<FheMarketplaceImage />}
+                link="https://github.com/aakash4dev/credit-card-fraud-detector"
+                githubLink="https://github.com/aakash4dev/credit-card-fraud-detector"
+                longDescription="Developed an AI-powered fraud detection system that combines machine learning, blockchain security, and facial recognition to prevent fraudulent transactions."
+                technologies={["Python", "Solidity", "Hardhat", "Golang"]}
+                features={[
+                  "AI-powered fraud detection",
+                  "Blockchain security",
+                  "Facial recognition integration",
+                  "Prevents fraudulent transactions"
+                ]}
+              />
+
+              <EnhancedProjectCard
+                title="upcoming: Solidity Code Generator"
                 description="An AI-powered tool for rapid development and testing of secure smart contracts with built-in security analysis."
                 tags={["Solidity", "TypeScript", "OpenAI", "Hardhat"]}
                 imageComponent={<SolidityGeneratorImage />}
@@ -253,7 +283,7 @@ export default function Home() {
                 features={["Rapid development", "Security analysis", "AI-powered"]}
               />
               <EnhancedProjectCard
-                title="Cross-Chain Bridge"
+                title="upcoming: Cross-Chain Bridge"
                 description="A secure bridge for asset transfers between different blockchain networks with multi-signature validation."
                 tags={["Rust", "Solidity", "Cosmos SDK", "DeFi"]}
                 imageComponent={<CrossChainBridgeImage />}
@@ -264,7 +294,7 @@ export default function Home() {
                 features={["Multi-signature validation", "Secure asset transfers", "Cross-chain"]}
               />
               <EnhancedProjectCard
-                title="ZK Voting System"
+                title="upcoming: ZK Voting System"
                 description="A privacy-preserving voting system using zero-knowledge proofs to ensure vote secrecy while maintaining verifiability."
                 tags={["ZK Proofs", "Rust", "Circom", "Ethereum"]}
                 imageComponent={<ZkVotingImage />}
@@ -274,17 +304,7 @@ export default function Home() {
                 technologies={["ZK Proofs", "Rust", "Circom", "Ethereum"]}
                 features={["Privacy-preserving", "Vote secrecy", "Verifiability"]}
               />
-              <EnhancedProjectCard
-                title="FHE Data Marketplace"
-                description="A secure data marketplace using Fully Homomorphic Encryption allowing computation on encrypted data without revealing the underlying information."
-                tags={["FHE", "Go", "React", "Privacy"]}
-                imageComponent={<FheMarketplaceImage />}
-                link="https://github.com/aakash4dev/fhe-marketplace"
-                githubLink="https://github.com/aakash4dev/fhe-marketplace"
-                longDescription="A secure data marketplace using Fully Homomorphic Encryption allowing computation on encrypted data without revealing the underlying information."
-                technologies={["FHE", "Go", "React", "Privacy"]}
-                features={["Secure data marketplace", "FHE computation", "Privacy-preserving"]}
-              />
+              
             </div>
           </motion.div>
         </div>
@@ -406,7 +426,7 @@ export default function Home() {
                   <p className="text-gray-400 mb-2">Prefer to schedule a meeting?</p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <a
-                      href="https://calendly.com/aakash4dev/quickchat"
+                      href="https://calendly.com/aakash4dev/let-s-connect"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700"
@@ -415,7 +435,7 @@ export default function Home() {
                       Schedule a Meeting
                     </a>
                     <a
-                      href="https://drive.google.com/file/d/1Prtj5UBWzvVys8TviXZL-yN_551cRQJQ/view"
+                      href="https://drive.google.com/file/d/1ua_I6_7Sg0VcFROTm1wFf72_wL7brZDb/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-pink-600 hover:bg-pink-700"

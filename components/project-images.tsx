@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react"
 
-// Function to generate a blockchain explorer visualization
+import Image from "next/image"
+
+// Function to generate a blockchain explorer visualization using retcons.jpeg
 export function BlockchainExplorerImage() {
   const [loaded, setLoaded] = useState(false)
 
@@ -13,31 +15,18 @@ export function BlockchainExplorerImage() {
   if (!loaded) return <div className="w-full h-48 bg-gray-800 animate-pulse"></div>
 
   return (
-    <div className="relative w-full h-48 bg-gradient-to-r from-purple-900/50 to-pink-900/50 overflow-hidden">
-      <div className="absolute inset-0 flex flex-col">
-        <div className="h-10 bg-gray-800 flex items-center px-4">
-          <div className="w-24 h-5 bg-purple-500/50 rounded"></div>
-          <div className="ml-auto flex space-x-2">
-            <div className="w-5 h-5 rounded-full bg-pink-500/50"></div>
-            <div className="w-5 h-5 rounded-full bg-purple-500/50"></div>
-          </div>
-        </div>
-        <div className="flex-1 p-4 grid grid-cols-3 gap-2">
-          {Array(6)
-            .fill(0)
-            .map((_, i) => (
-              <div key={i} className="bg-gray-800/80 rounded p-2">
-                <div className="w-full h-3 bg-purple-500/30 rounded mb-2"></div>
-                <div className="w-2/3 h-3 bg-pink-500/30 rounded"></div>
-              </div>
-            ))}
-        </div>
-        <div className="h-8 bg-gray-800/90 flex items-center justify-center">
-          <div className="w-32 h-3 bg-purple-500/50 rounded"></div>
-        </div>
-      </div>
+    <div className="relative w-full h-48 bg-gradient-to-r from-purple-900/50 to-pink-900/50 overflow-hidden flex items-center justify-center">
+      <Image
+        src="/project_blockchain_explorer.png"
+        alt="Blockchain Explorer"
+        fill priority
+        className="object-contain rounded-lg shadow-lg"
+        sizes="(max-width: 768px) 100vw, 700px"
+      />
+      <div className="absolute inset-0 bg-black/30 rounded-lg" />
     </div>
   )
+  
 }
 
 // Function to generate a blog platform visualization

@@ -9,10 +9,10 @@ const timelineData = [
     id: 1,
     company: "Airchains",
     role: "Sr Blockchain Developer",
-    period: "Apr 2022 - Present",
+    period: "Oct 2022 - May 2025",
     location: "Gurugram, Haryana, India",
     type: "Full-time",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DEsMNlYMWuOymRm7e6c0t8qNlnGmld.png",
+    logo: "/airchains_logo.jpeg",
     skills: ["Golang", "Rust", "FHE", "ZK", "Blockchain Infrastructure"],
     description:
       "Specializing in Golang, Rust, and core blockchain development, focusing on Fully Homomorphic Encryption (FHE), Zero-Knowledge Proofs (ZK), and deep blockchain infrastructure. Building secure, scalable blockchain solutions, optimizing consensus mechanisms, and advancing cryptographic innovations in decentralized systems.",
@@ -21,14 +21,14 @@ const timelineData = [
     id: 2,
     company: "Retcons Technology",
     role: "Blockchain Developer",
-    period: "Nov 2021 - Mar 2022",
+    period: "Nov 2021 - Sept 2022",
     location: "Raipur, Chhattisgarh, India",
     type: "Full-time",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HOhx6dzS7fVPgGWywMnlx9mykVF4PN.png",
+    logo: "/retcons.jpeg",
     skills: ["Solidity", "JavaScript", "Web3"],
     description:
       "Started my journey into Web3, Solidity, and blockchain. Explored cryptocurrencies, their underlying algorithms, and investment strategies. Became a bit more extroverted along the way. Had an amazing experience and great moments with friends.",
-  },
+    },
   {
     id: 3,
     company: "QuadKubes Technology",
@@ -36,7 +36,7 @@ const timelineData = [
     period: "Mar 2021 - Aug 2021",
     location: "India",
     type: "Internship",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-3GneHILnpMqR0ejz6nnszQtrTCrIyY.png",
+    logo: "/quadkubesLogo.jpeg",
     skills: ["Full Stack Development"],
     description:
       "Internship as a Full Stack Web Developer, gaining hands-on experience in web technologies and development practices.",
@@ -48,7 +48,7 @@ const timelineData = [
     period: "May 2018 - Jun 2022",
     location: "Bhilai, India",
     type: "Education",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TujRuHbIqQ3EmgqT3E699wMHMeo683.png",
+    logo: "/rungtaLogo.jpeg",
     skills: ["Computer Science", "Engineering"],
     description:
       "Bachelor's degree in Computer Science and Engineering. Grade: 75.5%. Activities: Chess, Dance, Hackathons 👨‍💻",
@@ -70,7 +70,7 @@ export default function AboutMe() {
           {/* Timeline Title */}
           <h3 className="text-2xl md:text-3xl font-bold mb-12 text-center">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-              The Road So Far
+              My Journy
             </span>
             <span className="ml-2 text-white">🛤️</span>
           </h3>
