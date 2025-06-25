@@ -41,7 +41,7 @@ Anyone is free to use, modify, and redistribute this code to create their own po
 ## 🌐 Connect with Me
 
 - **GitHub:** [github.com/aakash4dev](https://github.com/aakash4dev)
-- **Blog:** [aakash4dev.blog](https://aakash4dev.blog)
+- **Blog:** [medium.com/@aakash4dev](https://medium.com/@aakash4dev)
 - **Twitter:** [@aakash4dev](https://twitter.com/aakash4dev)
 - **Instagram:** [@aakash4dev](https://www.instagram.com/aakash4dev)
 - **LinkedIn:** [linkedin.com/in/aakash4dev](https://www.linkedin.com/in/aakash4dev/)
